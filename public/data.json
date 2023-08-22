@@ -225,7 +225,7 @@
       "demo": "",
       "thumbnail": "src/assets/coding.png",
       "galleries": [],
-      "tags": [1, 3, 6, 4, 2],
+      "tags": [1, 3, 6, 4],
       "images": [
       ]
     },
@@ -277,10 +277,6 @@
     {
       "image": "./galleries/3d/Donut.webp",
       "caption": "Donut Tutorial"
-    },
-    {
-      "image": "./galleries/3d/Donut1.webp",
-      "caption": ""
     },
     {
       "image": "./galleries/3d/Panorama.webp",
