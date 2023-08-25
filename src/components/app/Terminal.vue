@@ -1,5 +1,5 @@
 <template>
-  <Icon :appName="'Terminal'" :bgImage="'bg-[url(./app-icon/measure-1575947.svg)]'">
+  <Icon :appName="'Terminal'" :bgImage="'bg-[url()]'">
 
     <div class="flex items-center">
       <span>guest@portofolio.wahyu</span>

@@ -1,5 +1,5 @@
 <template>
-  <Icon :appName="'Projects'" :bgImage="'bg-[url(./icon/projects.png)]'">
+  <Icon :appName="'Projects'" :bgImage="'bg-[url()]'">
 
   <div class="flex flex-row">
     <div class="left-0 h-screen w-1/6 overflow-y-scroll thin-scrollbar">

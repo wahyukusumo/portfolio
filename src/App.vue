@@ -60,7 +60,7 @@
         </div>
 
         <!-- <Clock />
-        <Icon :appName="'Languages'" :bgImage="'bg-[url(@/app-icon/translate-2365238.svg)]'">
+        <Icon :appName="'Languages'" :bgImage="'bg-[url()]'">
           <div class="grid grid-cols-4 md:grid-cols-6">
             <Card v-for="language in appdata.languages" class="text-center" :key="language.index">
               <img :src="language.icon" />
@@ -68,8 +68,8 @@
             </Card>
           </div>
         </Icon>
-        <Icon :appName="'Calendar'" :bgImage="'bg-[url(@/app-icon/calendar-2365233.svg)]'" />
-        <Icon :appName="'Notes'" :bgImage="'bg-[url(@/app-icon/notes-2365245.svg)]'">
+        <Icon :appName="'Calendar'" :bgImage="'bg-[url()]'" />
+        <Icon :appName="'Notes'" :bgImage="'bg-[url()]'">
           <Card>
             <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=wahyukusumo&langs_count=10&hide_border=true"/>
           </Card>
