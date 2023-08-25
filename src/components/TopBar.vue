@@ -42,8 +42,7 @@
 </template>
 
 <script>
-import { createPopper } from "@popperjs/core";
-import Toggle from './ToggleButton.vue';
+import Toggle from '@/components/ToggleButton.vue';
 
 export default {
   data() {

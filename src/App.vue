@@ -1,6 +1,6 @@
 <template>
   <div v-if="startupShow" class="w-screen h-screen z-[1000] bg-black absolute flex flex-col gap-6 justify-center items-center">
-      <img src="../vite.svg" width="80" alt="">
+      <img src="@/assets/vite.svg" width="80" alt="">
       <!-- <img src="public/loading.png" class="absolute animate-spin-slow" width="200" alt=""> -->
       <div class="w-6/12 lg:w-1/12 bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-700">
         <div class="bg-blue-600 h-1.5 rounded-full dark:bg-blue-500 animate-fill"></div>
@@ -60,7 +60,7 @@
         </div>
 
         <!-- <Clock />
-        <Icon :appName="'Languages'" :bgImage="'bg-[url(./app-icon/translate-2365238.svg)]'">
+        <Icon :appName="'Languages'" :bgImage="'bg-[url(@/app-icon/translate-2365238.svg)]'">
           <div class="grid grid-cols-4 md:grid-cols-6">
             <Card v-for="language in appdata.languages" class="text-center" :key="language.index">
               <img :src="language.icon" />
@@ -68,8 +68,8 @@
             </Card>
           </div>
         </Icon>
-        <Icon :appName="'Calendar'" :bgImage="'bg-[url(./app-icon/calendar-2365233.svg)]'" />
-        <Icon :appName="'Notes'" :bgImage="'bg-[url(./app-icon/notes-2365245.svg)]'">
+        <Icon :appName="'Calendar'" :bgImage="'bg-[url(@/app-icon/calendar-2365233.svg)]'" />
+        <Icon :appName="'Notes'" :bgImage="'bg-[url(@/app-icon/notes-2365245.svg)]'">
           <Card>
             <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=wahyukusumo&langs_count=10&hide_border=true"/>
           </Card>
@@ -100,27 +100,27 @@
 </template>
 
 <script>
-import Icon from './components/Icon.vue';
-import Card from './components/Card.vue';
-import Accordion from './components/Accordion.vue';
-import Widget from './components/Widget.vue';
-import TopBar from './components/TopBar.vue';
-import Toggle from './components/ToggleButton.vue';
+import Icon from '@/components/Icon.vue';
+import Card from '@/components/Card.vue';
+import Accordion from '@/components/Accordion.vue';
+import Widget from '@/components/Widget.vue';
+import TopBar from '@/components/TopBar.vue';
+import Toggle from '@/components/ToggleButton.vue';
 
 
 // Import Apps
-import Clock from './components/app/Clock.vue';
-import ClockDate from './components/app/ClockDate.vue';
-import About from './components/app/About.vue';
-import Project from './components/app/Project.vue';
-import Pro from './components/app/Pro.vue';
-import Photo from './components/app/Photo.vue';
-import Experience from './components/app/Experience.vue';
-import Terminal from './components/app/Terminal.vue';
-import Education from './components/app/Education.vue';
+import Clock from '@/components/app/Clock.vue';
+import ClockDate from '@/components/app/ClockDate.vue';
+import About from '@/components/app/About.vue';
+import Project from '@/components/app/Project.vue';
+import Pro from '@/components/app/Pro.vue';
+import Photo from '@/components/app/Photo.vue';
+import Experience from '@/components/app/Experience.vue';
+import Terminal from '@/components/app/Terminal.vue';
+import Education from '@/components/app/Education.vue';
 
 // Import Data
-import AppData from './assets/data.json'
+import AppData from '@/assets/data.json'
 
 export default {
   data() {

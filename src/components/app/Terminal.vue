@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import Icon from '../Icon.vue';
-import Card from '../Card.vue';
+import Icon from '@/components/Icon.vue';
+import Card from '@/components/Card.vue';
 
 
 export default {

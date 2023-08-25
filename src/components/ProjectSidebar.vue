@@ -6,9 +6,9 @@
 </template>
 
 <script>
-import Accordion from '../Accordion.vue';
-import Icon from '../Icon.vue';
-import Badge from '../Badge.vue';
+import Accordion from '@/components/Accordion.vue';
+import Icon from '@/components/Icon.vue';
+import Badge from '@/components/Badge.vue';
 
 export default {
   data() {

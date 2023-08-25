@@ -12,7 +12,7 @@
         <!-- Info Container -->
         <div class="flex justify-center flex-col items-center" :class="{'xl:absolute xl:mt-[45vh]': this.isFull, 'xl:absolute xl:mt-[43vh]': !this.isFull}">
           <!-- Profile image -->
-          <div class="bg-[url('./avatar.png')] bg-center bg-cover h-64 w-64 md:w-48 md:h-48 z-20 rounded-full border-8 border-white dark:border-[#231d26]"
+          <div class="bg-[url('@/assets/profile/avatar.png')] bg-center bg-cover h-64 w-64 md:w-48 md:h-48 z-20 rounded-full border-8 border-white dark:border-[#231d26]"
           :class="{'border-white dark:border-[#231d26]': this.isFull}" />
 
           <!-- About -->
@@ -58,8 +58,8 @@
 </template>
 
 <script>
-import Icon from '../Icon.vue';
-import Card from '../Card.vue';
+import Icon from '@/components/Icon.vue';
+import Card from '@/components/Card.vue';
 
 
 export default {

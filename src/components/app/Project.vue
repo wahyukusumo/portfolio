@@ -1,6 +1,6 @@
 <template>
   <Icon :appName="'Projects'" :bgImage="'bg-[url(./icon/projects.png)]'" @windowFull="(isFull) => this.isFull = isFull">
-    <Accordion v-for="project in appdata.projects" :key="project.index" :title="project.name" :thumbnail="project.thumbnail">
+    <Accordion v-for="project in appdata.projects" :key="project.index" :title="project.name" :thumbnail="`assets/project-icons/${project.thumbnail}`">
 
       <!-- Badge -->
       <template v-slot:badge>
@@ -54,9 +54,9 @@ lalu diapprove oleh bagian perencanaan, setelah itu kontrak akan dijalankan oleh
 dan pembayaran yang dilakukan oleh bagian keuangan. -->
 
 <script>
-import Accordion from '../Accordion.vue';
-import Icon from '../Icon.vue';
-import Badge from '../Badge.vue';
+import Accordion from '@/components/Accordion.vue';
+import Icon from '@/components/Icon.vue';
+import Badge from '@/components/Badge.vue';
 
 export default {
   data() {

@@ -178,7 +178,7 @@
       "content": "This is a prototype web app that I developed during my internship at PT. PLN Persero in 2018. The app is designed for monitoring Work Orders or SPK (Surat Perintah Kerja).",
       "github": "https://github.com/wahyukusumo/monitoring-spk-php",
       "demo": "",
-      "thumbnail": "src/assets/coding.png",
+      "thumbnail": "coding.png",
       "galleries": [],
       "tags": [0, 7, 6],
       "images": [
@@ -195,7 +195,7 @@
       "content": "Tokopedia is Indonesian e-commerce company. This web app I made to tracks prices of products sold on Tokopedia. Tokopedia used to tell you if the price of the product on your wishlist increased or decreased; it was a really useful feature, but they decided to remove it.",
       "github": "https://github.com/wahyukusumo/tokopedia-price-tracker",
       "demo": "",
-      "thumbnail": "src/assets/tpt.png",
+      "thumbnail": "tpt.png",
       "galleries": [],
       "tags": [1, 3, 5],
       "images": [
@@ -209,7 +209,7 @@
       "content": "Tokopedia is Indonesian e-commerce company. This web app I made to tracks prices of products sold on Tokopedia. Tokopedia used to tell you if the price of the product on your wishlist increased or decreased; it was a really useful feature, but they decided to remove it.",
       "github": "https://github.com/wahyukusumo/kano-lyrics",
       "demo": "https://wahyukusumo.github.io/kano-lyrics/",
-      "thumbnail": "src/assets/kano.png",
+      "thumbnail": "kano.png",
       "galleries": [],
       "tags": [1, 4, 5],
       "images": [
@@ -223,7 +223,7 @@
       "content": "Download and organize comics library.",
       "github": "",
       "demo": "",
-      "thumbnail": "src/assets/coding.png",
+      "thumbnail": "coding.png",
       "galleries": [],
       "tags": [1, 3, 6, 4],
       "images": [
@@ -234,7 +234,7 @@
       "content": "Create Bahasa Indonesia Translation",
       "github": "https://github.com/crackededed/Xtra",
       "demo": "",
-      "thumbnail": "src/assets/xtra.png",
+      "thumbnail": "xtra.png",
       "galleries": [],
       "tags": [2],
       "images": [

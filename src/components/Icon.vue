@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import WindowApp from './WindowApp.vue';
+import WindowApp from '@/components/WindowApp.vue';
 
 export default {
   data() {
