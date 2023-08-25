@@ -1,5 +1,5 @@
 <template>
-  <Icon :appName="appdata.apps[2].name.en" :bgImage="'bg-[url(./app-icon/exp.png)]'">
+  <Icon :appName="appdata.apps[2].name.en" :bgImage="'bg-[url(@/assets/icons/experience.png)]'">
     <Card class="px-9 py-4">
       <ol class="relative border-l border-gray-200 dark:border-gray-700">
         <li class="ml-6" v-for="education in appdata.education" :key="education.index">

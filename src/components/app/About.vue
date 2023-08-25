@@ -1,13 +1,13 @@
 <template>
   <Icon :appName="appdata.apps[0].name.en"
-        :bgImage="'bg-[url(./icon/about.png)]'"
+        :bgImage="'bg-[url(@/assets/icons/about.png)]'"
         @windowFull="(isFull) => this.isFull = isFull">
 
     <div class="flex flex-col" :class="{'md:grid-cols-1': this.isFull}">
 
       <Card class="flex flex-col justify-center items-center py-5 h-full lg:border-b-0">
         <!-- Cover image -->
-        <div class="bg-[url('./avatar.png')] bg-center bg-cover w-full z-10" :class="{'xl:h-[20vh] 2xl:h-[30vh]': this.isFull, 'xl:h-[20vh]': !this.isFull}"></div>
+        <div class="bg-[url('@/assets/profile/avatar.png')] bg-center bg-cover w-full z-10" :class="{'xl:h-[20vh] 2xl:h-[30vh]': this.isFull, 'xl:h-[20vh]': !this.isFull}"></div>
 
         <!-- Info Container -->
         <div class="flex justify-center flex-col items-center" :class="{'xl:absolute xl:mt-[45vh]': this.isFull, 'xl:absolute xl:mt-[43vh]': !this.isFull}">
