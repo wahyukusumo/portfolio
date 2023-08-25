@@ -120,7 +120,7 @@ import Terminal from './components/app/Terminal.vue';
 import Education from './components/app/Education.vue';
 
 // Import Data
-import AppData from '../public/data.json'
+import AppData from './assets/data.json'
 
 export default {
   data() {
