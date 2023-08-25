@@ -1,6 +1,6 @@
 <template>
   <div v-if="startupShow" class="w-screen h-screen z-[1000] bg-black absolute flex flex-col gap-6 justify-center items-center">
-      <img src="public/vite.svg" width="80" alt="">
+      <img src="../vite.svg" width="80" alt="">
       <!-- <img src="public/loading.png" class="absolute animate-spin-slow" width="200" alt=""> -->
       <div class="w-6/12 lg:w-1/12 bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-700">
         <div class="bg-blue-600 h-1.5 rounded-full dark:bg-blue-500 animate-fill"></div>
