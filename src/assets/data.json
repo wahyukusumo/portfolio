@@ -213,9 +213,9 @@
       "galleries": [],
       "tags": [1, 4, 5],
       "images": [
-        "@/assets/docs/kano-lyrics/home.webp",
-        "@/assets/docs/kano-lyrics/detail.webp",
-        "@/assets/docs/kano-lyrics/lyric detail.webp"
+        "./docs/kano-lyrics/home.webp",
+        "./docs/kano-lyrics/detail.webp",
+        "./docs/kano-lyrics/lyric detail.webp"
       ]
     },
     {
