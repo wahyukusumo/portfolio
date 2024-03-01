@@ -206,7 +206,7 @@
     },
     {
       "name": "Kano's Lyrics Repository",
-      "content": "Tokopedia is Indonesian e-commerce company. This web app I made to tracks prices of products sold on Tokopedia. Tokopedia used to tell you if the price of the product on your wishlist increased or decreased; it was a really useful feature, but they decided to remove it.",
+      "content": "A website dedicated to collect lyrics from Kano, a Japanese musician and virtual YouTuber.",
       "github": "https://github.com/wahyukusumo/kano-lyrics",
       "demo": "https://wahyukusumo.github.io/kano-lyrics/",
       "thumbnail": "./project-icons/kano.png",
