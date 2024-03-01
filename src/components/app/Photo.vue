@@ -17,7 +17,7 @@
 
         <div class="h-80 xl:h-56 relative rounded-lg" :class="{'xl:h-[22rem]': this.isFull}">
           <div class="absolute inset-0 bg-cover bg-center z-0 rounded-lg" :style="{ backgroundImage: `url(${image.image})` }"></div>
-          <div class="opacity-0 hover:opacity-100 duration-300 absolute inset-0 z-10 flex justify-center items-center text-center text-base text-white bg-black/30">
+          <div class="opacity-0 hover:opacity-100 hover:rounded-lg duration-300 absolute inset-0 z-10 flex justify-center items-center text-center text-base text-white bg-black/30">
             <p>{{ image.caption }}</p>
           </div>
         </div>
