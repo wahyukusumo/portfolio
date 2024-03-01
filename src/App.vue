@@ -1,9 +1,9 @@
 <template>
-  <div v-if="startupShow" class="w-screen h-screen z-[1000] bg-black absolute flex flex-col gap-6 justify-center items-center">
-      <img src="@/assets/vite.svg" width="80" alt="">
+  <div v-if="startupShow" class="w-screen h-[100dvh] z-[1000] bg-black absolute flex flex-col gap-6 justify-center items-center">
+      <img src="@/assets/logo.png" width="250" alt="">
       <!-- <img src="public/loading.png" class="absolute animate-spin-slow" width="200" alt=""> -->
       <div class="w-6/12 lg:w-1/12 bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-700">
-        <div class="bg-blue-600 h-1.5 rounded-full dark:bg-blue-500 animate-fill"></div>
+        <div class="bg-white h-1.5 rounded-full dark:bg-white animate-fill"></div>
       </div>
   </div>
 
@@ -49,7 +49,7 @@
     </div>
   </nav>
 
-  <div class="md:container md:px-72 flex flex-col mx-auto h-screen m-0 px-5 pt-2 pb-5 font-inter text-white" @click="dropdownPopoverShow = false">
+  <div class="md:container md:px-72 flex flex-col mx-auto h-[100dvh] m-0 px-5 pt-2 pb-5 font-inter text-white" @click="dropdownPopoverShow = false">
     <div id="apps" class="lg:hidden">
       <div class="grid grid-cols-4 gap-6 md:grid-cols-2 my-10 justify-items-center">
         <!-- <Icon v-for="app in appdata.apps" :key="app.index" :appName="app.name"/> -->
