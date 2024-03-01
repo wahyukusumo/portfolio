@@ -220,7 +220,7 @@
     },
     {
       "name": "Comic Library & Comic Downloader",
-      "content": "Download and organize comics library.",
+      "content": "A Python program that helps to download comics from a specific website and also organizes a comics library. It also functions as a comic reader.",
       "github": "",
       "demo": "",
       "thumbnail": "./project-icons/coding.png",
