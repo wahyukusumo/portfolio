@@ -1,5 +1,5 @@
 <template>
-  <Icon :appName="'Photos'" :bgImage="'bg-[url(@/assets/icons/camera_alt.png)]'"
+  <Icon :appName="'Photos'" :bgImage="'bg-[url(@/assets/icons/camera_alt.webp)]'"
         @windowFull="(isFull) => this.isFull = isFull">
 
     <div class="p-2 gap-2 grid grid-cols-1 md:grid-cols-3 xl:gap-4 xl:p-4 relative" :class="{'xl:grid-cols-5': this.isFull}">

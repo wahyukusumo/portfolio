@@ -1,5 +1,5 @@
 <template>
-  <Icon :appName="'Projects'" :bgImage="'bg-[url(@/assets/icons/projects.png)]'" @windowFull="(isFull) => this.isFull = isFull">
+  <Icon :appName="'Projects'" :bgImage="'bg-[url(@/assets/icons/projects.webp)]'" @windowFull="(isFull) => this.isFull = isFull">
     <Accordion v-for="project in appdata.projects" :key="project.index" :title="project.name" :thumbnail="project.thumbnail">
 
       <!-- Badge -->

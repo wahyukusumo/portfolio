@@ -1,5 +1,5 @@
 <template>
-  <Icon :appName="'Experience'" :bgImage="'bg-[url(@/assets/icons/experience.png)]'">
+  <Icon :appName="'Experience'" :bgImage="'bg-[url(@/assets/icons/experience.webp)]'">
     <Card class="px-6 py-4">
       <ol class="relative border-l border-gray-200 dark:border-gray-700">
           <li class="ml-6" v-for="experience in appdata.experience" :key="experience.index">
