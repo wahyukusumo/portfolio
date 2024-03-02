@@ -1,11 +1,6 @@
 # Portfolio
 
 
-## Todo
-
-* [ ] Create new logo
-* [ ] Create new wallpaper
-
 ## Updating Dist
 
 ```
