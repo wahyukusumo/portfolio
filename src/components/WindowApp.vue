@@ -1,6 +1,6 @@
 <template>
   <div ref="draggableContainer" :id="`${appName.toLowerCase()}-window`" @mousedown="this.$emit('appID', this.$refs.draggableContainer.id)"
-    class="h-screen w-screen left-0 top-0 xl:left-32 xl:top-24 fixed lg:top-7 lg:drop-shadow-2xl lg:shadow-2xl animate-zoom-out lg:max-w-[40%] lg:h-auto lg:border-2 border-gray-400 dark:lg:border-[#151217] lg:rounded-xl"
+    class="h-[100dvh] w-screen left-0 top-0 xl:left-32 xl:top-24 fixed lg:top-7 lg:drop-shadow-2xl lg:shadow-2xl animate-zoom-out lg:max-w-[40%] lg:h-auto lg:border-2 border-gray-400 dark:lg:border-[#151217] lg:rounded-xl"
     :class="{'lg:max-w-[100%] lg:h-full w-full h-full top-7 left-0 absolute transition-all ease-linear border-none': isFull, 'transition-all ease-linear':minSize}">
 
     <!-- App Navbar -->
@@ -35,7 +35,7 @@
     </div>
 
     <!-- Content -->
-    <div class="relative text-black bg-white h-[90vh] lg:h-[90vh] lg:min-h-[40vh] overflow-y-scroll
+    <div class="relative text-black bg-white h-[90dvh] lg:h-[90vh] lg:min-h-[40vh] overflow-y-scroll
                 lg:pb-0 dark:bg-[#231d26] dark:text-white" style="scrollbar-width: thin;"
         :class="{'lg:max-h-[60vh]': !isFull, 'lg:max-h-[90vh]': isFull}">
       <slot></slot>
