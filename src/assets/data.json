@@ -191,6 +191,21 @@
       ]
     },
     {
+      "name": "Apex Overlaps",
+      "content": "Apex Overlaps is a free tool that will help you find overlaps in your Apex Legends weekly challenges. This tool will find and separate challenge overlaps based on legends, weapons, battle royale mode, and challenges that can be completed in any mode.",
+      "github": "https://github.com/wahyukusumo/apex-overlaps",
+      "demo": "https://apexoverlaps.com/",
+      "thumbnail": "./project-icons/overlaps.png",
+      "galleries": [],
+      "tags": [1, 4, 5],
+      "images": [
+        "./docs/apex-overlaps/home.png",
+        "./docs/apex-overlaps/choose-weekly.png",
+        "./docs/apex-overlaps/legends-overlap.png",
+        "./docs/apex-overlaps/weapon-overlaps.png"
+      ]
+    },
+    {
       "name": "Tokopedia Price Tracker",
       "content": "Tokopedia is Indonesian e-commerce company. This web app I made to tracks prices of products sold on Tokopedia. Tokopedia used to tell you if the price of the product on your wishlist increased or decreased; it was a really useful feature, but they decided to remove it.",
       "github": "https://github.com/wahyukusumo/tokopedia-price-tracker",
