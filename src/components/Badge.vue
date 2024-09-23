@@ -1,5 +1,5 @@
 <template>
-    <!-- bg-rose-100 text-rose-800 dark:bg-rose-800 dark:text-rose-100
+  <!-- bg-rose-100 text-rose-800 dark:bg-rose-800 dark:text-rose-100
     bg-purple-100 text-purple-800 dark:bg-purple-800 dark:text-purple-100
     bg-yellow-100 text-yellow-800 dark:bg-yellow-800 dark:text-yellow-100
     bg-blue-100 text-blue-800 dark:bg-blue-800 dark:text-blue-100
@@ -13,8 +13,7 @@
 </template>
 
 <script>
-
 export default {
   props: ['title']
-};
+}
 </script>

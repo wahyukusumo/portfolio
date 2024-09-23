@@ -32,23 +32,19 @@
   "setting": {
     "wallpaper": "",
     "colors": {
-      "light": {
-
-      },
-      "dark": {
-
-      }
+      "light": {},
+      "dark": {}
     }
   },
   "profile": {
     "about": {
-      "en": "Hello! My name is Wahyu Kusumoraharjo. I'm 21 years old, and I live in Tangerang City, Indonesia. Currently, I am studying at a private university in Tangerang City. I mainly do web development. Sometimes, I also do arts, whether it's 2D or 3D. You can see my artwork in the Photos app.",
-      "id": "Halo! Perkenalkan nama saya <strong>Wahyu Kusumoraharjo</strong>, usia saya 21 tahun dan saya tinggal di Kota Tangerang."
+      "en": "Hello! My name is Wahyu Kusumoraharjo. Currently, I am studying at a private university in Tangerang City. I mainly do web development. Sometimes, I also do arts, whether it's 2D or 3D. You can see my artwork in the Photos app.",
+      "id": ""
     }
   },
   "socials": [
     {
-      "username": "dev@wahyukusumo.com",
+      "username": "hi@wahyukusumo.com",
       "icon": "mail-outline",
       "url": ""
     },
@@ -178,7 +174,7 @@
       "content": "This is a prototype web app that I developed during my internship at PT. PLN Persero in 2018. The app is designed for monitoring Work Orders or SPK (Surat Perintah Kerja).",
       "github": "https://github.com/wahyukusumo/monitoring-spk-php",
       "demo": "",
-      "thumbnail": "./project-icons/coding.png",
+      "thumbnail": "./project-icons/coding.webp",
       "galleries": [],
       "tags": [0, 7, 6],
       "images": [
@@ -195,14 +191,14 @@
       "content": "Apex Overlaps is a free tool that will help you find overlaps in your Apex Legends weekly challenges. This tool will find and separate challenge overlaps based on legends, weapons, battle royale mode, and challenges that can be completed in any mode.",
       "github": "https://github.com/wahyukusumo/apex-overlaps",
       "demo": "https://apexoverlaps.com/",
-      "thumbnail": "./project-icons/overlaps.png",
+      "thumbnail": "./project-icons/overlaps.webp",
       "galleries": [],
       "tags": [1, 4, 5],
       "images": [
-        "./docs/apex-overlaps/home.png",
-        "./docs/apex-overlaps/choose-weekly.png",
-        "./docs/apex-overlaps/legends-overlap.png",
-        "./docs/apex-overlaps/weapon-overlaps.png"
+        "./docs/apex-overlaps/home.webp",
+        "./docs/apex-overlaps/choose-weekly.webp",
+        "./docs/apex-overlaps/legends-overlap.webp",
+        "./docs/apex-overlaps/weapon-overlaps.webp"
       ]
     },
     {
@@ -220,11 +216,21 @@
       ]
     },
     {
+      "name": "Shiritori Game",
+      "content": "Shiritori is a Japanese word game, and I made an English version of it. In this game, the user takes turns entering words where each word must start with the last letter of the previous word.",
+      "github": "https://github.com/wahyukusumo/shiritori",
+      "demo": "",
+      "thumbnail": "./project-icons/shiritori.webp",
+      "galleries": [],
+      "tags": [1, 4, 5],
+      "images": []
+    },
+    {
       "name": "Kano's Lyrics Repository",
       "content": "A website dedicated to collect lyrics from Kano, a Japanese musician and virtual YouTuber.",
       "github": "https://github.com/wahyukusumo/kano-lyrics",
       "demo": "https://wahyukusumo.github.io/kano-lyrics/",
-      "thumbnail": "./project-icons/kano.png",
+      "thumbnail": "./project-icons/kano.webp",
       "galleries": [],
       "tags": [1, 4, 5],
       "images": [
@@ -234,26 +240,24 @@
       ]
     },
     {
-      "name": "Comic Library & Comic Downloader",
-      "content": "A Python program that helps to download comics from a specific website and also organizes a comics library. It also functions as a comic reader.",
+      "name": "Comic Library",
+      "content": "These are a set of programs that make it easier for me to download, organize, and read comics. First, I use JavaScript to create a browser add-on that allows me to add comics to a queue. Then, I use Python to download the comics from the list and automatically organize them, as the program also retrieves the metadata. Additionally, I built a comic library using Python Flask, which makes it easier to view my collection and read the comics.",
       "github": "",
       "demo": "",
-      "thumbnail": "./project-icons/coding.png",
+      "thumbnail": "./project-icons/coding.webp",
       "galleries": [],
       "tags": [1, 3, 6, 4],
-      "images": [
-      ]
+      "images": []
     },
     {
       "name": "Xtra",
       "content": "Create Bahasa Indonesia Translation",
       "github": "https://github.com/crackededed/Xtra",
       "demo": "",
-      "thumbnail": "./project-icons/xtra.png",
+      "thumbnail": "./project-icons/xtra.webp",
       "galleries": [],
       "tags": [2],
-      "images": [
-      ]
+      "images": []
     }
   ],
   "galleries": [

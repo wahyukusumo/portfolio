@@ -1,29 +1,34 @@
 <template>
   <Icon :appName="'Terminal'" :bgImage="'bg-[url()]'">
-
     <div class="flex items-center">
       <span>guest@portofolio.wahyu</span>
-      <input v-model="command" @keyup.enter="submit" type="text" name="" id="" class="w-full border-none outline-none bg-transparent p-2" autofocus="autofocus">
+      <input
+        v-model="command"
+        @keyup.enter="submit"
+        type="text"
+        name=""
+        id=""
+        class="w-full border-none outline-none bg-transparent p-2"
+        autofocus="autofocus"
+      />
     </div>
   </Icon>
 </template>
 
 <script>
-import Icon from '@/components/Icon.vue';
-import Card from '@/components/Card.vue';
-
+import Icon from '@/components/Icon.vue'
+import Card from '@/components/Card.vue'
 
 export default {
   data() {
-    return {
-    };
+    return {}
   },
   methods: {
     submit() {
-      switch(this.command) {
+      switch (this.command) {
         case 'help':
           alert('no help')
-          break;
+          break
         default:
           alert('no command like that')
       }
@@ -34,5 +39,5 @@ export default {
     Card
   },
   props: ['appdata']
-};
+}
 </script>

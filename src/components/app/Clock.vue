@@ -1,5 +1,6 @@
 <template>
-  <Widget class="col-span-2 row-span-2 md:row-span-1" :widgetName="'Clock'" :bgColor="'bg-gradient-to-b from-indigo-500 via-purple-500 to-pink-500'">
+  <Widget class="col-span-2 row-span-2 md:row-span-1" :widgetName="'Clock'"
+    :bgColor="'bg-gradient-to-b from-indigo-500 via-purple-500 to-pink-500'">
     <div class="flex flex-col items-center justify-center font-medium">
       <span class="hidden md:flex text-4xl">{{ hours }}:{{ minutes }}:{{ seconds }}</span>
       <span class="md:hidden text-6xl">{{ hours }}</span>
@@ -10,15 +11,15 @@
 </template>
 
 <script>
-import Widget from '@/components/Widget.vue';
+import Widget from '@/components/Widget.vue'
 
 export default {
-  name: "DigitalClock",
+  name: 'DigitalClock',
   data() {
     return {
       hours: 0,
       minutes: 0,
-      seconds: 0,
+      seconds: 0
     }
   },
   mounted() {
@@ -26,19 +27,19 @@ export default {
   },
   methods: {
     setTime() {
-      const date = new Date();
+      const date = new Date()
 
-      let hours = date.getHours();
-      let minutes = date.getMinutes();
-      let seconds = date.getSeconds();
+      let hours = date.getHours()
+      let minutes = date.getMinutes()
+      let seconds = date.getSeconds()
 
-      hours = hours <= 9 ? `${hours}`.padStart(2, 0) : hours;
-      minutes = minutes <= 9 ? `${minutes}`.padStart(2, 0) : minutes;
-      seconds = seconds <= 9 ? `${seconds}`.padStart(2, 0) : seconds;
+      hours = hours <= 9 ? `${hours}`.padStart(2, 0) : hours
+      minutes = minutes <= 9 ? `${minutes}`.padStart(2, 0) : minutes
+      seconds = seconds <= 9 ? `${seconds}`.padStart(2, 0) : seconds
 
-      this.hours = hours;
-      this.minutes = minutes;
-      this.seconds = seconds;
+      this.hours = hours
+      this.minutes = minutes
+      this.seconds = seconds
     }
   },
   components: {

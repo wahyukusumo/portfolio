@@ -39,8 +39,10 @@ export default {
       this.positions.clientX = event.clientX
       this.positions.clientY = event.clientY
       // set the element's new position:
-      this.$refs.draggableContainer.style.top = (this.$refs.draggableContainer.offsetTop - this.positions.movementY) + 'px'
-      this.$refs.draggableContainer.style.left = (this.$refs.draggableContainer.offsetLeft - this.positions.movementX) + 'px'
+      this.$refs.draggableContainer.style.top =
+        this.$refs.draggableContainer.offsetTop - this.positions.movementY + 'px'
+      this.$refs.draggableContainer.style.left =
+        this.$refs.draggableContainer.offsetLeft - this.positions.movementX + 'px'
     },
     closeDragElement() {
       document.onmouseup = null

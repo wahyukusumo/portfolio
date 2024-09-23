@@ -20,22 +20,22 @@
 </template>
 
 <script>
-import Card from '@/components/Card.vue';
+import Card from '@/components/Card.vue'
 
 export default {
   data() {
     return {
-      albumShow: false,
-    };
+      albumShow: false
+    }
   },
   methods: {
     toggleAlbum() {
       this.albumShow = !this.albumShow
-    },
+    }
   },
   components: {
     Card
   },
   props: ['title', 'thumbnail']
-};
+}
 </script>

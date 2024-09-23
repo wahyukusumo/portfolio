@@ -9,15 +9,14 @@
 </template>
 
 <script>
-
 export default {
-  name: "DigitalClock",
+  name: 'DigitalClock',
   data() {
     return {
       date: new Date().toDateString(),
       hours: 0,
       minutes: 0,
-      seconds: 0,
+      seconds: 0
     }
   },
   mounted() {
@@ -25,22 +24,21 @@ export default {
   },
   methods: {
     setTime() {
-      const date = new Date();
+      const date = new Date()
 
-      let hours = date.getHours();
-      let minutes = date.getMinutes();
-      let seconds = date.getSeconds();
+      let hours = date.getHours()
+      let minutes = date.getMinutes()
+      let seconds = date.getSeconds()
 
-      hours = hours <= 9 ? `${hours}`.padStart(2, 0) : hours;
-      minutes = minutes <= 9 ? `${minutes}`.padStart(2, 0) : minutes;
-      seconds = seconds <= 9 ? `${seconds}`.padStart(2, 0) : seconds;
+      hours = hours <= 9 ? `${hours}`.padStart(2, 0) : hours
+      minutes = minutes <= 9 ? `${minutes}`.padStart(2, 0) : minutes
+      seconds = seconds <= 9 ? `${seconds}`.padStart(2, 0) : seconds
 
-      this.hours = hours;
-      this.minutes = minutes;
-      this.seconds = seconds;
+      this.hours = hours
+      this.minutes = minutes
+      this.seconds = seconds
     }
   },
-  components: {
-  }
+  components: {}
 }
 </script>
