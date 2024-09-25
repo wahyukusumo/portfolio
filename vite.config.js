@@ -14,5 +14,8 @@ export default defineConfig({
   server: {
     host: true,
     port: 5175
+  },
+  build: {
+    chunkSizeWarningLimit: 8000, // Set limit to 3,500 kB for gzipped size
   }
 })

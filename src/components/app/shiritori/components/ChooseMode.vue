@@ -48,7 +48,7 @@ export default {
     return {
       difficulties: this.createDifficulties([
         // { difficulty: "help", name: "Ruri", quip: "You can check the rules here.", score: 0, time: 15 },
-        { difficulty: "easy", name: "Elu", quip: "Let's play together!", score: 10, time: 10 },
+        { difficulty: "easy", name: "Elu", quip: "Let's play together!", score: 100, time: 15 },
         { difficulty: "medium", name: "Naraka", quip: "Huh!! You think you can beat me!?? ", score: 120, time: 12 },
         { difficulty: "hard", name: "Sasaki", quip: "Ok, are you ready? ", score: 150, time: 10 },
         { difficulty: "extreme", name: "Yorumi", quip: "Sure! I hope you already prepare.", score: 150, time: 8 }

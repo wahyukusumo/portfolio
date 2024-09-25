@@ -6,8 +6,7 @@ import Badge from '@/components/Badge.vue'
 
 <template>
   <Icon :appName="'Projects'" :bgImage="'bg-[url(@/assets/icons/projects.webp)]'"
-    @windowFull="(isFull) => (this.isFull = isFull)">
-
+    @windowFull="(parentIsFull) => (isFull = parentIsFull)">
 
     <!-- Small Screen -->
     <Accordion v-if="!isFull" v-for="project in appdata.projects" :key="project.index" :title="project.name"
@@ -21,7 +20,7 @@ import Badge from '@/components/Badge.vue'
       </template>
 
       <template v-slot:content>
-        <div class="mx-2 text-justify" :class="{ 'mx-48': this.isFull }">
+        <div class="mx-2 text-justify" :class="{ 'mx-48': isFull }">
           <div class="flex flex-row gap-2">
             <a v-if="project.github" :href="project.github" target="_blank" type="button"
               class="px-3 py-2 text-xs font-medium text-center text-white bg-sky-500 rounded-lg hover:bg-sky-800 dark:bg-gray-500 dark:hover:bg-gray-700 dark:text-black">Github</a>
@@ -119,13 +118,14 @@ import Badge from '@/components/Badge.vue'
 export default {
   data() {
     return {
-      isFull: undefined,
+      isFull: false,
       fullWidthImages: false,
       projects: this.appdata.projects,
       projectID: 0
     }
   },
-  methods: {},
+  methods: {
+  },
   props: ['appdata']
 }
 </script>

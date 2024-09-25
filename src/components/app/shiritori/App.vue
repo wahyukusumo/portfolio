@@ -12,22 +12,22 @@ import { PlayIcon } from '@heroicons/vue/24/outline';
 
 <template>
   <Icon :appName="'Shiritori'" :bgImage="'bg-[url(@/assets/icons/shiritori.webp)]'"
-    @windowFull="(isFull) => (this.isFull = isFull)">
+    @windowFull="(isParentFull) => (isFull = isParentFull)">
 
-    <div class="flex h-full w-full overflow-x-hidden">
+    <div class="flex h-full w-full overflow-hidden">
 
       <ChooseMode @choose-difficulty="loadChatData"
-        :class="{ 'w-[28rem] sticky top-0 h-full border-r border-[#171118]': isFull, 'hidden': showGameChatScreen && !isFull }" />
-
-      <WarningAlert v-show="game.userInput.error && showGameChatScreen" :error="game.userInput.error" />
+        :class="{ 'lg:w-[28rem] sticky top-0 h-full border-r border-[#171118]': isFull, 'hidden': showGameChatScreen && !isFull }" />
 
       <!-- Chat Windows -->
-      <div v-if="showGameChatScreen" id="message-area" class="relative flex-1 overflow-y-scroll h-full scrollbar-thin"
-        :class="{ '': isFull }" ref="messageContainer">
+      <div v-if="showGameChatScreen" id="message-area" class="relative flex-1 h-full" ref="messageContainer">
+
+        <WarningAlert :class="{ 'flex justify-center items-center w-full': isFull }"
+          v-show="game.userInput.error && showGameChatScreen" :error="game.userInput.error" />
 
         <NavArea :gameSaves="game" @hide-chat="(b) => showGameChatScreen = b" />
 
-        <div class="flex flex-col gap-4 p-6 py-28 w-full">
+        <div class="flex flex-col gap-4 p-6 py-28 w-full h-full overflow-y-scroll thin-scrollbar">
           <BubbleChat v-for="(message, index) in game.messages" :key="index" :from="message.from" :game="message.game"
             :message="message" :difficulty="game.difficulty" />
           <BubbleChat from="me" :isTyping="game.isTyping.me" />
@@ -53,7 +53,7 @@ import { PlayIcon } from '@heroicons/vue/24/outline';
       </TextArea>
       </div>
 
-      <span v-show="isFull"
+      <span v-show="!showGameChatScreen && isFull"
         class="flex justify-center items-center w-full text-2xl font-semibold text-gray-400 dark:text-neutral-500">
         No Message Selected
       </span>

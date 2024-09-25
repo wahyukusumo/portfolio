@@ -66,7 +66,11 @@ export default {
       projectID: 0
     }
   },
-  methods: {},
+  methods: {
+    handleWindowFull(isFull) {
+      this.isFull = isFull; // Properly update the reactive property
+    }
+  },
   props: ['appdata']
 }
 </script>

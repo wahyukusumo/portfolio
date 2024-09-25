@@ -11,15 +11,15 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "@formkit/auto-animate": "^1.0.0-beta.3",
+    "@formkit/auto-animate": "^0.8.2",
     "@heroicons/vue": "^2.1.5",
-    "@popperjs/core": "2.9.1",
+    "@popperjs/core": "^2.11.8",
     "v-drag": "^3.0.8",
     "vue": "^3.2.37"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.10.4",
-    "@vitejs/plugin-vue": "^3.0.3",
+    "@vitejs/plugin-vue": "^5.1.4",
     "@vue/eslint-config-prettier": "^9.0.0",
     "autoprefixer": "^10.4.8",
     "eslint": "^9.10.0",
@@ -27,6 +27,6 @@
     "postcss": "^8.4.16",
     "prettier": "^3.3.3",
     "tailwindcss": "^3.4.11",
-    "vite": "^3.0.7"
+    "vite": "^5.4.7"
   }
 }
