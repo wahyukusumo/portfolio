@@ -20,14 +20,15 @@ import { PlayIcon } from '@heroicons/vue/24/outline';
         :class="{ 'lg:w-[28rem] sticky top-0 h-full border-r border-[#171118]': isFull, 'hidden': showGameChatScreen && !isFull }" />
 
       <!-- Chat Windows -->
-      <div v-if="showGameChatScreen" id="message-area" class="relative flex-1 h-full" ref="messageContainer">
+      <div v-if="showGameChatScreen" id="message-area" class="relative flex-1 h-full">
 
         <WarningAlert :class="{ 'flex justify-center items-center w-full': isFull }"
           v-show="game.userInput.error && showGameChatScreen" :error="game.userInput.error" />
 
         <NavArea :gameSaves="game" @hide-chat="(b) => showGameChatScreen = b" />
 
-        <div class="flex flex-col gap-4 p-6 py-28 w-full h-full overflow-y-scroll thin-scrollbar">
+        <div class="flex flex-col gap-4 p-6 py-28 w-full h-full overflow-y-scroll thin-scrollbar"
+          ref="messageContainer">
           <BubbleChat v-for="(message, index) in game.messages" :key="index" :from="message.from" :game="message.game"
             :message="message" :difficulty="game.difficulty" />
           <BubbleChat from="me" :isTyping="game.isTyping.me" />
@@ -36,7 +37,7 @@ import { PlayIcon } from '@heroicons/vue/24/outline';
 
         <TextArea :timer="game.timer.timeLeft" :gameWord="game.gameWord" :isGameStart="game.isGameStart">
         <!-- Start Button -->
-        <button type="button" @click="startTheGame()" v-if="!game.isGameStart"
+        <button type="button" @click="startTheGame()" v-if="!game.isGameStart" :disabled="disablePlayButton"
           class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4
           focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center me-2">
           <PlayIcon class="size-5" />
@@ -70,6 +71,7 @@ export default {
     return {
       isFull: false,
       showGameChatScreen: false,
+      disablePlayButton: true,
       game: { // Only data needed for load the app
         timer: {
           initialTime: 0, // Initial time in seconds
@@ -147,7 +149,7 @@ export default {
           this.sendChat('bot', gameData.quip, 1300);
         }
       }
-
+      setTimeout(() => { this.disablePlayButton = false }, 1300);
     },
 
     startTheGame() {
@@ -193,6 +195,7 @@ export default {
 
     sendChat(from, message, delay = 0) {
       this.game.isTyping[from] = true;
+      this.scrollToBottomView();
 
       return new Promise((resolve) => {
         setTimeout(() => {
@@ -227,6 +230,8 @@ export default {
         this.$nextTick(() => this.$refs.userInputForm.focus());
 
         if (!this.game.isMyTurn && this.game.isGameStart) {
+          this.game.userInput.value = '';
+          this.game.userInput.error = '';
           this.botGameResponse();
         }
       } else {
@@ -237,7 +242,7 @@ export default {
     userInputHandle(event) {
       this.scrollToBottomView();
       this.isUserTyping();
-      const inputValue = event.target.value;
+      const inputValue = event.target.value.toLowerCase();
 
       if (this.game.isGameStart && inputValue.at(0) !== this.game.gameWord) {
         this.game.userInput.error = `Word should start with "${this.game.gameWord.toUpperCase()}"`;
@@ -246,7 +251,7 @@ export default {
 
     // Main User Response
     userResponse() {
-      const userInput = this.game.userInput.value;
+      const userInput = this.game.userInput.value.toLowerCase();
       this.game.isGameStart ? this.userGameResponse(userInput) : this.userChatResponse(userInput);
       this.game.isTyping.me = false;
     },

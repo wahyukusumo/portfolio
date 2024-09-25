@@ -4,7 +4,7 @@ export default class Shiritori {
   constructor(difficulty, userInput) {
     this.difficulty = difficulty;
     this.dictionary = dictionary;
-    this.userInput = userInput;
+    this.userInput = userInput.toLowerCase();
   }
 
   isWordValid() {
