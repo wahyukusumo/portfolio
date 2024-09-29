@@ -4,7 +4,7 @@ import TextArea from './components/TextArea.vue';
 import NavArea from './components/NavArea.vue';
 import ChooseMode from './components/ChooseMode.vue';
 import WarningAlert from './components/WarningAlert.vue';
-
+import SidebarContainer from '@/components/SidebarContainer.vue'
 import Icon from '@/components/Icon.vue';
 
 import { PlayIcon } from '@heroicons/vue/24/outline';
@@ -14,12 +14,53 @@ import { PlayIcon } from '@heroicons/vue/24/outline';
   <Icon :appName="'Shiritori'" :bgImage="'bg-[url(@/assets/icons/shiritori.webp)]'"
     @windowFull="(isParentFull) => (isFull = isParentFull)">
 
-    <div class="flex h-full w-full overflow-hidden">
+    <SidebarContainer :isFull="isFull" :showMain="showGameChatScreen" emptyMsg="No Message Selected">
+
+      <template v-slot:sidebar>
+        <div class="py-3" :class="{ 'hidden': showGameChatScreen && !isFull }">
+          <ChooseMode @choose-difficulty="loadChatData" :isSelected="isGameSelected()" />
+        </div>
+      </template>
+
+      <template v-slot:main>
+          <WarningAlert :class="{ 'flex justify-center items-center w-full': isFull }"
+            v-show="game.userInput.error && showGameChatScreen" :error="game.userInput.error" />
+
+          <NavArea :gameSaves="game" @hide-chat="(b) => showGameChatScreen = b" />
+
+          <div class="flex flex-col gap-4 p-6 py-28 w-full h-full overflow-y-scroll thin-scrollbar"
+            ref="messageContainer">
+            <BubbleChat v-for="(message, index) in game.messages" :key="index" :from="message.from" :game="message.game"
+              :message="message" :difficulty="game.difficulty" />
+            <BubbleChat from="me" :isTyping="game.isTyping.me" />
+            <BubbleChat from="bot" :isTyping="game.isTyping.bot" />
+          </div>
+
+          <TextArea :timer="game.timer.timeLeft" :gameWord="game.gameWord" :isGameStart="game.isGameStart">
+          <button type="button" @click="startTheGame()" v-if="!game.isGameStart" :disabled="disablePlayButton" class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4
+              focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center me-2">
+            <PlayIcon class="size-5" />
+          </button>
+
+          <form @submit.prevent="userResponse()" class="w-full">
+            <input type="text" @input="userInputHandle" v-model="game.userInput.value" :disabled="!game.isMyTurn"
+              :placeholder="game.placeholder" required autofocus ref="userInputForm"
+              class="text-md rounded-2xl w-full p-2.5 border dark:bg-dark-800" :class="{
+                'bg-red-50 border-red-500 text-red-900 dark:text-red-500 placeholder-red-700 focus:ring-red-500 focus:border-red-500': game.userInput.error,
+                'bg-gray-50 border-gray-300 dark:border-dark-900 focus:ring-violet-400 focus:border-violet-400': !game.userInput.error,
+                'bg-gray-400': !game.isMyTurn
+              }">
+          </form>
+        </TextArea>
+      </template>
+    </SidebarContainer>
+
+    <!-- <div class="flex h-full w-full overflow-hidden">
 
       <ChooseMode @choose-difficulty="loadChatData"
         :class="{ 'lg:w-[28rem] sticky top-0 h-full border-r border-[#171118]': isFull, 'hidden': showGameChatScreen && !isFull }" />
 
-      <!-- Chat Windows -->
+      Chat Windows
       <div v-if="showGameChatScreen" id="message-area" class="relative flex-1 h-full">
 
         <WarningAlert :class="{ 'flex justify-center items-center w-full': isFull }"
@@ -36,22 +77,22 @@ import { PlayIcon } from '@heroicons/vue/24/outline';
         </div>
 
         <TextArea :timer="game.timer.timeLeft" :gameWord="game.gameWord" :isGameStart="game.isGameStart">
-        <!-- Start Button -->
-        <button type="button" @click="startTheGame()" v-if="!game.isGameStart" :disabled="disablePlayButton"
-          class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4
+      Start Button
+      <button type="button" @click="startTheGame()" v-if="!game.isGameStart" :disabled="disablePlayButton" class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4
           focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center me-2">
-          <PlayIcon class="size-5" />
-        </button>
+        <PlayIcon class="size-5" />
+      </button>
 
-        <form @submit.prevent="userResponse()" class="w-full">
-          <input type="text" @input="userInputHandle" v-model="game.userInput.value" :disabled="!game.isMyTurn" :placeholder="game.placeholder" required autofocus
-          ref="userInputForm" class="text-md rounded-2xl w-full p-2.5 border dark:bg-dark-800" :class="{
+      <form @submit.prevent="userResponse()" class="w-full">
+        <input type="text" @input="userInputHandle" v-model="game.userInput.value" :disabled="!game.isMyTurn"
+          :placeholder="game.placeholder" required autofocus ref="userInputForm"
+          class="text-md rounded-2xl w-full p-2.5 border dark:bg-dark-800" :class="{
             'bg-red-50 border-red-500 text-red-900 dark:text-red-500 placeholder-red-700 focus:ring-red-500 focus:border-red-500': game.userInput.error,
             'bg-gray-50 border-gray-300 dark:border-dark-900 focus:ring-violet-400 focus:border-violet-400': !game.userInput.error,
             'bg-gray-400': !game.isMyTurn
           }">
-        </form>
-      </TextArea>
+      </form>
+    </TextArea>
       </div>
 
       <span v-show="!showGameChatScreen && isFull"
@@ -59,7 +100,7 @@ import { PlayIcon } from '@heroicons/vue/24/outline';
         No Message Selected
       </span>
 
-    </div>
+    </div> -->
   </Icon>
 </template>
 
@@ -88,6 +129,12 @@ export default {
     };
   },
   methods: {
+    isGameSelected() {
+      if (this.game.difficulty && this.showGameChatScreen) {
+        return this.game.difficulty
+      }
+    },
+
     startTimer() {
       if (this.game.timer.isPlaying) return; // Prevent starting multiple intervals
 

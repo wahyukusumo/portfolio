@@ -19,3 +19,21 @@
 ::-webkit-scrollbar-thumb {
   -webkit-box-shadow: inset 0px 0px 0px 10px #767478;
 }
+
+@layer components {
+  .themes {
+    @apply border-gray-300 dark:border-[#171118] bg-white dark:bg-[#231d26] text-black dark:text-white;
+  }
+
+  .themes-hover {
+    @apply hover:bg-gray-300 dark:hover:bg-[#1c171e];
+  }
+
+  .item-themes {
+    @apply bg-sky-500 text-white hover:bg-sky-700 dark:bg-indigo-700 dark:text-white dark:hover:bg-indigo-900;
+  }
+
+  hr {
+    @apply border-gray-300 dark:border-[#171118];
+  }
+}

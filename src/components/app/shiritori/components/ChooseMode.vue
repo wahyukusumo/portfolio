@@ -1,15 +1,18 @@
 <script setup>
+import ListGroup from '@/components/ListGroup.vue'
 import { ChevronRightIcon } from '@heroicons/vue/24/outline'
 </script>
 
 <template>
-  <div class="w-full h-full p-4 py-14 lg:py-28 sm:p-8">
-    <!-- Header -->
-    <div class="flex items-center justify-between mb-12">
-      <h5 class="text-2xl font-bold leading-none">Choose Difficulty</h5>
-    </div>
+  <ListGroup v-for="(difficulty, index) in difficulties" :key="index" @click="chooseDifficulty(index)"
+    :title="difficulty.difficulty" :description="difficulty.quip" :selected="isSelected == difficulty.difficulty">
+    <template v-slot:thumbnail>
+      <div class="size-12 rounded-full flex items-center justify-center text-2xl uppercase"
+        :class="badgeColor(difficulty.difficulty)">{{ difficulty.difficulty.at(0) }}</div>
+    </template>
+  </ListGroup>
 
-    <div class="flow-root">
+  <!-- <div class="flow-root">
       <ul role="list" class="divide-y divide-gray-200">
         <li class="py-3 sm:py-4 cursor-pointer" v-for="(difficulty, index) in difficulties" :key="index"
           @click="chooseDifficulty(index)">
@@ -17,12 +20,12 @@ import { ChevronRightIcon } from '@heroicons/vue/24/outline'
             <div class="flex-shrink-0">
               <div class="size-12 rounded-full flex items-center justify-center text-2xl uppercase"
                 :class="badgeColor(difficulty.difficulty)">{{ difficulty.difficulty.at(0) }}</div>
-              <!-- <img class="size-12 rounded-full" :src="imgSrc(difficulty.name)" alt="Profile image"> -->
+              <img class="size-12 rounded-full" :src="imgSrc(difficulty.name)" alt="Profile image">
             </div>
             <div class="flex-1 min-w-0 ms-4">
               <p class="text-md font-semibold capitalize truncate">
                 {{ difficulty.difficulty }}
-                <!-- {{ difficulty.name }} -->
+                {{ difficulty.name }}
               </p>
               <p class="text-sm truncate">
                 <span class="capitalize text-xs font-medium me-2 px-2.5 py-0.5 rounded-full"
@@ -38,8 +41,7 @@ import { ChevronRightIcon } from '@heroicons/vue/24/outline'
           </div>
         </li>
       </ul>
-    </div>
-  </div>
+    </div> -->
 </template>
 
 <script>
@@ -118,6 +120,6 @@ export default {
       return new URL(`../assets/images/profile/${image}.webp`, import.meta.url).href;
     }
   },
-  props: ['from', 'message', 'isTyping']
+  props: ['from', 'message', 'isTyping', 'isSelected']
 }
 </script>

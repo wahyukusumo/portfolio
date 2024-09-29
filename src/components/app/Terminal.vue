@@ -1,42 +1,38 @@
+<script setup>
+import Icon from '@/components/Icon.vue'
+import Card from '@/components/Card.vue'
+import ListGroup from '@/components/ListGroup.vue'
+import SidebarContainer from '@/components/SidebarContainer.vue'
+</script>
+
 <template>
   <Icon :appName="'Terminal'" :bgImage="'bg-[url()]'">
-    <div class="flex items-center">
-      <span>guest@portofolio.wahyu</span>
-      <input
-        v-model="command"
-        @keyup.enter="submit"
-        type="text"
-        name=""
-        id=""
-        class="w-full border-none outline-none bg-transparent p-2"
-        autofocus="autofocus"
-      />
+    <div class="font-mono">
+      <span>text like that</span>
+
+      <div class="flex items-center">
+        <span>terminal></span>
+        <input @keyup.enter="submit" type="text" name="" id=""
+          class="w-full border-none outline-none bg-transparent p-2" autofocus />
+      </div>
     </div>
+
   </Icon>
 </template>
 
 <script>
-import Icon from '@/components/Icon.vue'
-import Card from '@/components/Card.vue'
+
 
 export default {
   data() {
-    return {}
+    return {
+      commands: []
+    }
   },
   methods: {
     submit() {
-      switch (this.command) {
-        case 'help':
-          alert('no help')
-          break
-        default:
-          alert('no command like that')
-      }
+
     }
-  },
-  components: {
-    Icon,
-    Card
   },
   props: ['appdata']
 }

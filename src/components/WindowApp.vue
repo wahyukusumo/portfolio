@@ -1,8 +1,8 @@
 <template>
   <div ref="draggableContainer" :id="`${appName.toLowerCase()}-window`"
-    @mousedown="this.$emit('appID', this.$refs.draggableContainer.id)"
-    class="h-dvh w-screen left-0 top-0 xl:left-32 xl:top-24 fixed lg:top-7 lg:drop-shadow-2xl lg:shadow-2xl animate-zoom-out lg:max-w-[40%] lg:h-auto lg:border-2 border-gray-400 dark:lg:border-[#151217] lg:rounded-xl"
-    :class="{
+    @mousedown="this.$emit('appID', this.$refs.draggableContainer.id)" class="h-dvh w-screen left-0 top-0 xl:left-32 xl:top-24 fixed
+    lg:top-7 lg:drop-shadow-2xl lg:shadow-2xl animate-zoom-out lg:max-w-[40%] lg:h-auto lg:border-2 border-gray-300
+    dark:lg:border-[#151217] lg:rounded-xl" :class="{
       'transition-all ease-linear': minSize,
       'lg:max-w-full lg:h-full w-full h-full top-7 left-0 absolute transition-all ease-linear border-none': isFull
     }">
@@ -110,7 +110,6 @@ export default {
       document.onmousemove = null
     }
   },
-  components: {},
   props: ['appName', 'openApp', 'classes']
 }
 </script>

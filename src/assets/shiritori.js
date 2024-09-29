@@ -1,10 +1,28 @@
-import dictionary from '@/assets/words_dictionary.json';
+// import dictionary from '@/assets/filtered_words_dictionary.json';
 
 export default class Shiritori {
   constructor(difficulty, userInput) {
     this.difficulty = difficulty;
-    this.dictionary = dictionary;
+    this.dictionary = {};
+    // this.dictionary = dictionary;
     this.userInput = userInput.toLowerCase();
+
+    // Fetch the dictionary from GitHub and assign it to this.dictionary
+    this.loadDictionary();
+  }
+
+  // Method to fetch the dictionary from GitHub
+  async loadDictionary() {
+    try {
+      const response = await fetch('https://wahyukusumo.github.io/shiritori/public/filtered_words_dictionary.json');
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      this.dictionary = await response.json();
+      console.log('Dictionary loaded successfully:', this.dictionary);
+    } catch (error) {
+      console.error('Error loading dictionary:', error);
+    }
   }
 
   isWordValid() {
