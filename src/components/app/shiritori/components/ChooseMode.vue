@@ -4,11 +4,21 @@ import { ChevronRightIcon } from '@heroicons/vue/24/outline'
 </script>
 
 <template>
-  <ListGroup v-for="(difficulty, index) in difficulties" :key="index" @click="chooseDifficulty(index)"
-    :title="difficulty.difficulty" :description="difficulty.quip" :selected="isSelected == difficulty.difficulty">
+  <ListGroup
+    v-for="(difficulty, index) in difficulties"
+    :key="index"
+    @click="chooseDifficulty(index)"
+    :title="difficulty.difficulty"
+    :description="difficulty.quip"
+    :selected="isSelected == difficulty.difficulty"
+  >
     <template v-slot:thumbnail>
-      <div class="size-12 rounded-full flex items-center justify-center text-2xl uppercase"
-        :class="badgeColor(difficulty.difficulty)">{{ difficulty.difficulty.at(0) }}</div>
+      <div
+        class="size-12 rounded-full flex items-center justify-center text-2xl uppercase"
+        :class="badgeColor(difficulty.difficulty)"
+      >
+        {{ difficulty.difficulty.at(0) }}
+      </div>
     </template>
   </ListGroup>
 
@@ -50,30 +60,42 @@ export default {
     return {
       difficulties: this.createDifficulties([
         // { difficulty: "help", name: "Ruri", quip: "You can check the rules here.", score: 0, time: 15 },
-        { difficulty: "easy", name: "Elu", quip: "Let's play together!", score: 100, time: 15 },
-        { difficulty: "medium", name: "Naraka", quip: "Huh!! You think you can beat me!?? ", score: 120, time: 12 },
-        { difficulty: "hard", name: "Sasaki", quip: "Ok, are you ready? ", score: 150, time: 10 },
-        { difficulty: "extreme", name: "Yorumi", quip: "Sure! I hope you already prepare.", score: 150, time: 8 }
+        { difficulty: 'easy', name: 'Elu', quip: "Let's play together!", score: 100, time: 15 },
+        {
+          difficulty: 'medium',
+          name: 'Naraka',
+          quip: 'Huh!! You think you can beat me!?? ',
+          score: 120,
+          time: 12
+        },
+        { difficulty: 'hard', name: 'Sasaki', quip: 'Ok, are you ready? ', score: 150, time: 10 },
+        {
+          difficulty: 'extreme',
+          name: 'Yorumi',
+          quip: 'Sure! I hope you already prepare.',
+          score: 150,
+          time: 8
+        }
       ])
-    };
+    }
   },
   methods: {
     badgeColor(difficulty) {
       switch (difficulty) {
         case 'help':
-          return 'bg-yellow-100 text-yellow-900';
+          return 'bg-yellow-100 text-yellow-900'
         case 'easy':
-          return 'bg-emerald-300 text-emerald-900';
+          return 'bg-emerald-300 text-emerald-900'
         case 'medium':
-          return 'bg-blue-300 text-blue-900';
+          return 'bg-blue-300 text-blue-900'
         case 'hard':
-          return 'bg-rose-300 text-rose-900';
+          return 'bg-rose-300 text-rose-900'
         case 'extreme':
-          return 'bg-violet-300 text-violet-900';
+          return 'bg-violet-300 text-violet-900'
       }
     },
     createDifficulties(difficultyData) {
-      return difficultyData.map(difficulty => ({
+      return difficultyData.map((difficulty) => ({
         ...difficulty,
         messages: [],
         score: {
@@ -109,15 +131,15 @@ export default {
           agreeing: ['😊', '👍', 'ദ്ദി(˵ •̀ ᴗ - ˵ ) ✧', 'ദ്ദി ˉ͈̀꒳ˉ͈́ )✧'],
           greeting: ['(⌒∇⌒)/', 'ヾ(•ω•`)o', '✮⋆˙(˶ᵔ ᵕ ᵔ˶)'],
           lost: ['(っ °Д °;)っ', '＞︿＜', 'ಥ_ಥ', '🙁'],
-          won: ['(✿◡‿◡)', '(*^_^*)', '😀', '🥳'],
+          won: ['(✿◡‿◡)', '(*^_^*)', '😀', '🥳']
         }
-      }));
+      }))
     },
     chooseDifficulty(id) {
-      this.$emit('choose-difficulty', this.difficulties[id]);
+      this.$emit('choose-difficulty', this.difficulties[id])
     },
     imgSrc(image) {
-      return new URL(`../assets/images/profile/${image}.webp`, import.meta.url).href;
+      return new URL(`../assets/images/profile/${image}.webp`, import.meta.url).href
     }
   },
   props: ['from', 'message', 'isTyping', 'isSelected']

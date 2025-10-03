@@ -43,10 +43,22 @@ import MyButton from '@/components/DefaultButton.vue'
           <div
             :class="{ 'flex gap-4': isFull, 'flex flex-wrap gap-4 justify-center mt-5': !isFull }"
           >
-            <MyButton v-for="social in appdata.socials" :key="social" class="gap-1">
+            <!-- <MyButton v-for="social in appdata.socials" :key="social" class="gap-1">
               <ion-icon size="small" :name="social.icon" />
               {{ social.username }}
+            </MyButton> -->
+
+            <MyButton class="gap-1">
+              <ion-icon size="small" :name="appdata.socials[0].icon" />
+              {{ appdata.socials[0].username }}
             </MyButton>
+
+            <a :href="appdata.socials[1].url" target="_blank">
+              <MyButton class="gap-1">
+                <ion-icon size="small" :name="appdata.socials[1].icon" />
+                {{ appdata.socials[1].username }}
+              </MyButton>
+            </a>
           </div>
         </div>
       </Card>
